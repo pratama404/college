@@ -1,0 +1,1 @@
+Isi file ini akan ditulis ke dalam file.
