@@ -1,0 +1,7 @@
+<dependencies>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifact>
+        <version>2.12.5</version> <!-- Sesuaikan versi dengan yang Anda butuhkan -->
+    </dependency>
+</dependencies>

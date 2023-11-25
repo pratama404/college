@@ -1,0 +1,2 @@
+Halo, dunia!
+Ini adalah contoh penulisan ke file menggunakan Java.

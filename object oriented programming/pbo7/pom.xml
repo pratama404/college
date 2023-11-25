@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <para>&lt;dependencies&gt;&#13;</para>
+  <para>    &lt;dependency&gt;&#13;</para>
+  <para>        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;&#13;</para>
+  <para>        &lt;artifactId&gt;jackson-databind&lt;/artifact&gt;&#13;</para>
+  <para>        &lt;version&gt;2.12.5&lt;/version&gt; &lt;!-- Sesuaikan versi dengan yang Anda butuhkan --&gt;&#13;</para>
+  <para>    &lt;/dependency&gt;&#13;</para>
+  <para>&lt;/dependencies&gt;&#13;</para>
+</article>

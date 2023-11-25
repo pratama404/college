@@ -1,0 +1,1 @@
+Contoh tulisan untuk ditulis ke file dengan file writter.
