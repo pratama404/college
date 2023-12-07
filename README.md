@@ -24,17 +24,18 @@ Project ini adalah aplikasi untuk memanjemen Perpustakan seperti peminjaman meli
 * Membuat Laporan
 * Membuat branch LibraryPBO dan mengupload
 
-## Tech
-##### Perangkat Lunak
-- JDK 8
-- NetBeans IDE 15
-- PostgreSQL 14
 
-##### Liblary
-- PostgreSQL JDBC Driver `NetBeans`
-- Absolute Layout `NetBeans`
-- EnclipseLink (JPA 2.1) `NetBeans`
-- [Library lainnya](https://drive.google.com/drive/folders/12aqJtgMWrztnQLhqt8XpMU1gMrIvPGSz?usp=sharing)
+## Tech Stack:
+#### Software;  
+- JDK java 19.0.2 
+- Netbeans IDE 18
+- Xampp Mysql
+### Library:
+- Mysql Connector.java
+- RScalender
+- JFreechart
+- [Library](https://github.com/pratama404/college/tree/LibraryPBO/jar/jar)
+
 
 ## Preview
 ##### Form Login
