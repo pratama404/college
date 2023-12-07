@@ -1,4 +1,4 @@
-# LibraLinx
+# Library Management System
 Project ini adalah aplikasi untuk memanjemen Perpustakan seperti peminjaman melihat statistik Dashboard peminjaman buku dan data peminjaman secara realtimme. Hubungan dengan database dalam aplikasi ini adalah menggunakan parsisten. `DDL` dan `DML` untuk aplikasi ini terdapat di bawah pada bagian instalasi, setelah menambahkan DDL dan DML anda dapat login ke  aplikasi setelah melakukan register dan data menyesuaikan database
 
 ## Features
