@@ -1,0 +1,122 @@
+<!-- tag utama apada html berisi beberapa tag utama seperti head body dan footer 
+ dengan menggunakan shortcut ! kita bisa langsung menampilkan bebrapa tag utama yang ada di html -->
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- judul yang menampilkan tulisan pada bar  -->
+    <title>Belajar Html</title>
+
+    <!-- style digunakan untuk mengubah tataleta dan menngedit gaya penulisan -->
+    <style>
+        .city {
+            background-color: tomato;
+            color: yellow;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+        }
+        #sidoarjo{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<!-- tag body biasanya berisi konten utama yang akana di tampilkan di web  -->
+<body>
+
+    <!-- tag div untuk pengeleompokan agar mempermudah dalam kontrol layoutnya biasnaya d beri pennada berupa class atau id yang memiliki kedudukan utama di atas class-->
+    <div class="city" id="sidoarjo">
+    
+    <!-- tag h untuk judul sub judul dan beberapa style -->
+    <h1>h1// Wellcome belajar tag html di sini temen temen ! </h1>
+    <h2>h2// ini akan berisi contoh saja</h2>
+    <h3>h3// keep learn and share yaa !!</h3>
+    </div>
+
+    <!-- tag p untuk paragraf -->
+    <p style="color: red;"> p//ini paragraf</p>
+    <p>ini paragraf lain yang ada di bawahnya paragraf utama dan pada paragraf utama berwarna merah</p>
+
+    <!-- tag a untuk memberikan link yang mengarah ke halaman lain -->
+    <a href="https://uinsa.ac.id"> a//ini link ke web</a>
+
+    <!-- tag img untuk memberikan gambar bisa berupa url atau direktori dimana file tersebut disimpan -->
+    <div>
+    <img src="https://awsimages.detik.net.id/community/media/visual/2022/11/03/gambar-dekoratif-2.jpeg?w=600&q=90" alt="ini gambar " width="104" height="142">
+    </div>
+
+    <h2>ini Tabel</h2>
+    <!-- table untuk membentuk table  -->
+    <table>
+        <!-- tr untuk mendefinisikan tiap baris dalam tabel  -->
+        <tr>
+            <!-- th untuk membentuk field dalam tabel bisanaya tebal  -->
+            <th>Company </th>
+            <th> Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <!-- td untuk mmeberikan isi dari tabe biasnaay berada id bawah fiel yang udah di buat dengan tr -->
+            <td>Company </td>
+            <td> Contact</td>
+            <td>Country</td>
+        </tr>
+    </table>
+
+    <h2>ini list aja </h2>
+    <!-- ul untuk memebuat list -->
+    <ul>
+        <!-- li untuk mengisi itel dalam list -->
+        <li>ini </li>
+        <li>siapa </li>
+        <li>yaaa</li>
+    </ul>
+
+    <h2>ini frame</h2>
+    <!-- iframe untuk menampilkan cuplikan dalam web yang ingin di tampilkan  -->
+    <iframe src="https://uinsa.ac.id" frameborder="0" title=" descs" width="400px"></iframe>
+
+    <h2>ini description</h2>
+    <!-- dl atau description listuntuk memebuat daftar deskrisi atau keterangan  -->
+    <dl>
+        <!-- dt meentukan pendefinisian yang akan di bahas -->
+        <dt> Apa itu Ai ?</dt>
+        <!-- dd berisi deskripsi atau penjelasan  -->
+        <dd>ai adalah sebuah teknologi yang berasal dari data yang telah di pelajari pada awalnya lalu berkembangn dan sekaarang telah memiliki rasa dan dapat berpikir rasional layaknya seorang manusia</dd>
+        <dt>apa itu gdsc?</dt>
+        <dd>gdsc adalakah komunitas yang ada di berbagai dunia diinisiasi oleh google untuk mewadahi para mahasiswa yang ingin belajar lebih lanjut terkait teknologi dari google </dd>
+    </dl>
+
+    <h2>ini form input</h2>
+    <form action="submit.php" method="post">
+        <label for="name">Namamu:</label>
+        <input type="text" name="name" id="" required>
+        <label for="pass">passwordnya?:</label>
+        <input type="password" name="pass" id="" required>
+
+        <label for="semester">Semestermu? :</label>
+        <input type="radio" name="semester" id="dua" value="two">
+        <label for="two">Dua</label>
+        <input type="radio" name="semester" id="empat" value="four">
+        <label for="four">Empat</label>
+        <input type="radio" name="semester" id="enam" value="six">
+        <label for="six">Enam</label>
+
+        <div>
+        <label for="comment"> spill dong hari ini ngapaian aja</label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <input type="submit" name="daftar" id="daftar" value="kirim dong!">
+        </div>
+    </form> 
+
+
+    <h2>ini style aja</h2>
+    
+
+    
+</body>
+</html>
