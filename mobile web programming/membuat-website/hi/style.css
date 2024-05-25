@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    color: #000;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 20px;
+    overflow: auto;
+    display: flex; /* Use flexbox for the main container */
+}
+
+header {
+    height: 70px;
+    background-color: #b3ffb3;
+    display: flex; /* Use flexbox for the header */
+    align-items: center; /* Vertically center the content */
+}
+
+header h1 {
+    padding: 19px 24px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+header h1 a:hover {
+    color: #2DBF0B;
+}
+
+header ul {
+    display: flex; /* Use flexbox for the navigation */
+    margin-left: auto; /* Push the navigation to the right */
+}
+
+header ul li {
+    padding: 23px 10px;
+}
+
+header ul li a:hover {
+    color: #2DBF0B;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    text-decoration: double;
+    margin: 20px;
+    font-style: oblique;
+}
+
+#content {
+    flex: 1; /* Take up remaining space */
+    display: flex; /* Use flexbox for the content container */
+    flex-direction: column; /* Arrange items vertically */
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#hobi h2,
+img {
+    text-align: center;
+    width: 95%;
+}
+
+#profile {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#profile img {
+    width: 300px;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#ContactForm1_contact-form-name,
+#ContactForm1_contact-form-email,
+#ContactForm1_contact-form-email-message,
+#ContactForm1_contact-form-submit {
+    width: 100%;
+}
+
+.content-2 {
+    max-width: 222px;
+    text-align: center;
+    width: 100%;
+}
+
+aside {
+    width: 25%;
+    padding-left: 20px;
+    display: flex; /* Use flexbox for the aside */
+    flex-direction: column; /* Arrange items vertically */
+}
+
+footer {
+    padding: 20px;
+    color: white;
+    background-color: #b3ffb3;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+}
