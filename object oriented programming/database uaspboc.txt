@@ -1,0 +1,69 @@
+-- Membuat database baru jika belum ada dan menggunakan database tersebut
+CREATE DATABASE IF NOT EXISTS student_library;
+USE student_library;
+
+-- Membuat tabel kategori untuk menyimpan informasi terkait kategori buku
+CREATE TABLE kategori (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    nama VARCHAR(200) NOT NULL  -- Kolom untuk nama kategori dengan tipe data VARCHAR
+);
+
+-- Membuat tabel buku untuk menyimpan informasi terkait buku
+CREATE TABLE buku (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    judul VARCHAR(200) NOT NULL,  -- Kolom untuk judul buku dengan tipe data VARCHAR
+    kategori_id INT NOT NULL,  -- Kolom untuk mengaitkan buku dengan kategori tertentu
+    CONSTRAINT fk_buku_kategori_id FOREIGN KEY (kategori_id) REFERENCES kategori (id)  -- Kunci asing yang menghubungkan dengan tabel kategori
+);
+
+-- Membuat tabel penulis untuk menyimpan informasi terkait penulis buku
+CREATE TABLE penulis (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    nama VARCHAR(200) NOT NULL  -- Kolom untuk nama penulis dengan tipe data VARCHAR
+);
+
+-- Tabel penengah antara buku dan penulis untuk menyimpan relasi banyak-ke-banyak
+CREATE TABLE buku_penulis (
+    buku_id INT NOT NULL,  -- Kolom untuk ID buku
+    penulis_id INT NOT NULL,  -- Kolom untuk ID penulis
+    CONSTRAINT fk_buku_penulis_buku_id FOREIGN KEY (buku_id) REFERENCES buku (id),  -- Kunci asing yang menghubungkan dengan tabel buku
+    CONSTRAINT fk_buku_penulis_penulis_id FOREIGN KEY (penulis_id) REFERENCES penulis (id)  -- Kunci asing yang menghubungkan dengan tabel penulis
+);
+
+-- Membuat tabel penerbit untuk menyimpan informasi terkait penerbit buku
+CREATE TABLE penerbit (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    nama VARCHAR(200) NOT NULL  -- Kolom untuk nama penerbit dengan tipe data VARCHAR
+);
+
+-- Membuat tabel salinan buku untuk menyimpan informasi terkait salinan fisik buku
+CREATE TABLE salinan_buku (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    tahun_terbit INT(4) NOT NULL,  -- Kolom untuk tahun terbit buku
+    buku_id INT NOT NULL,  -- Kolom untuk mengaitkan salinan dengan informasi buku
+    penerbit_id INT NOT NULL,  -- Kolom untuk mengaitkan salinan dengan informasi penerbit
+    CONSTRAINT fk_salinan_buku_buku_id FOREIGN KEY (buku_id) REFERENCES buku (id),  -- Kunci asing yang menghubungkan dengan tabel buku
+    CONSTRAINT fk_salinan_buku_penerbit_id FOREIGN KEY (penerbit_id) REFERENCES penerbit (id)  -- Kunci asing yang menghubungkan dengan tabel penerbit
+);
+
+-- Membuat tabel akun anggota untuk menyimpan informasi terkait anggota perpustakaan
+CREATE TABLE akun_anggota (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    nama_depan VARCHAR(200) NOT NULL,  -- Kolom untuk nama depan anggota dengan tipe data VARCHAR
+    nama_belakang VARCHAR(200) NOT NULL,  -- Kolom untuk nama belakang anggota dengan tipe data VARCHAR
+    email VARCHAR(200) NOT NULL,  -- Kolom untuk alamat email anggota dengan tipe data VARCHAR
+    status ENUM('AKTIF', 'NON-AKTIF') NOT NULL  -- Kolom untuk status akun anggota dengan tipe ENUM
+);
+
+-- Membuat tabel peminjaman untuk menyimpan informasi terkait peminjaman buku oleh anggota
+CREATE TABLE peminjaman (
+    id SERIAL PRIMARY KEY,  -- Kolom ID sebagai primary key dengan auto increment
+    waktu_mulai TIMESTAMP NOT NULL,  -- Kolom untuk waktu memulai peminjaman buku
+    waktu_selesai TIMESTAMP NOT NULL,  -- Kolom untuk waktu selesai peminjaman buku
+    salinan_buku_id INT NOT NULL,  -- Kolom untuk mengaitkan peminjaman dengan salinan buku tertentu
+    akun_anggota_id INT NOT NULL,  -- Kolom untuk mengaitkan peminjaman dengan akun anggota tertentu
+    sudah_dikembalikan BOOLEAN DEFAULT false,  -- Kolom untuk status pengembalian buku
+    CONSTRAINT fk_peminjaman_salinan_buku_id FOREIGN KEY (salinan_buku_id) REFERENCES salinan_buku (id),  -- Kunci asing yang menghubungkan dengan tabel salinan buku
+    CONSTRAINT fk_peminjaman_akun_anggota_id FOREIGN KEY (akun_anggota_id) REFERENCES akun_anggota (id)  -- Kunci asing yang menghubungkan dengan tabel akun anggota
+);
+

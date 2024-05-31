@@ -1,0 +1,39 @@
+-- Insert dummy data untuk tabel kategori
+INSERT INTO kategori (nama)
+SELECT 'Kategori ' || generate_series
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel penulis
+INSERT INTO penulis (nama)
+SELECT 'Penulis ' || generate_series
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel buku
+INSERT INTO buku (judul, kategori_id)
+SELECT 'Judul Buku ' || generate_series, floor(random() * 100) + 1
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel buku_penulis
+INSERT INTO buku_penulis (buku_id, penulis_id)
+SELECT floor(random() * 100) + 1, floor(random() * 100) + 1
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel penerbit
+INSERT INTO penerbit (nama)
+SELECT 'Penerbit ' || generate_series
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel salinan_buku
+INSERT INTO salinan_buku (tahun_terbit, buku_id, penerbit_id)
+SELECT floor(random() * 20) + 2000, floor(random() * 100) + 1, floor(random() * 100) + 1
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel akun_anggota
+INSERT INTO akun_anggota (nama_depan, nama_belakang, email, status)
+SELECT 'Nama_Depan ' || generate_series, 'Nama_Belakang ' || generate_series, 'email' || generate_series || '@example.com', CASE WHEN random() > 0.5 THEN 'AKTIF' ELSE 'NON-AKTIF' END
+FROM generate_series(1, 2000);
+
+-- Insert dummy data untuk tabel peminjaman
+INSERT INTO peminjaman (waktu_mulai, waktu_selesai, salinan_buku_id, akun_anggota_id, sudah_dikembalikan)
+SELECT CURRENT_TIMESTAMP - random() * INTERVAL '365 days', CURRENT_TIMESTAMP, floor(random() * 100) + 1, floor(random() * 100) + 1, CASE WHEN random() > 0.5 THEN true ELSE false END
+FROM generate_series(1, 2000);
